@@ -2,6 +2,7 @@ package com.example.proyectoinicial;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -26,6 +27,7 @@ public class Pagina1 extends AppCompatActivity {
             Toast.makeText(this,getString(R.string.mensajeAdvertencia),Toast.LENGTH_LONG).show();
             openPrimeraPagina(v_usuario,v_clave);
         });
+        Log.d("MainActivity","Activity Created");
     }
     private void openPrimeraPagina(String v_usuario,String v_clave) {
         String v_email = "fg@gmail.com";
@@ -35,5 +37,25 @@ public class Pagina1 extends AppCompatActivity {
         startActivity(intent);
         //Intent intent = new Intent(this,MainFotos.class);
         //startActivity(intent);
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("MainActivity","Activity Started");
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("MainActivity","Activity Resumen");
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("MainActivity","Activity Stop");
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("MainActivity","Activity Destroy");
     }
 }
