@@ -7,18 +7,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.example.proyectoinicial.databinding.ActivityListaRecycleView1Binding;
+import com.example.proyectoinicial.databinding.ActivityMainBinding;
+
+import java.util.ArrayList;
 
 public class ListaRecycleView1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_lista_recycle_view1);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        ActivityListaRecycleView1Binding binding = ActivityListaRecycleView1Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        String pais1 = "Mexico";
+        binding.eqRecycler.setLayoutManager(new LinearLayoutManager(this));
+
+        ArrayList<EartQuake> eqList = new ArrayList<>();
+        eqList.add(new EartQuake("1",pais1,5.0,415252511,23,45));
+        eqList.add(new EartQuake("2","chile",6.0,415252511,23,45));
+        eqList.add(new EartQuake("3","peru",7.0,415252511,23,45));
+        eqList.add(new EartQuake("4","tarma",8.0,415252511,23,45));
+        eqList.add(new EartQuake("5","alemania",9.0,415252511,23,45));
+        eqList.add(new EartQuake("6","españa",5.56,415252511,23,45));
+
     }
 }
