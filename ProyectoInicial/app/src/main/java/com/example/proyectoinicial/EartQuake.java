@@ -1,5 +1,7 @@
 package com.example.proyectoinicial;
 
+import java.util.Objects;
+
 public class EartQuake {
     private String id;
     private String place;
@@ -39,5 +41,18 @@ public class EartQuake {
 
     public double getLongitude() {
         return longitude;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EartQuake eartQuake = (EartQuake) o;
+        return Double.compare(magnitud, eartQuake.magnitud) == 0 && time == eartQuake.time && Double.compare(latitude, eartQuake.latitude) == 0 && Double.compare(longitude, eartQuake.longitude) == 0 && Objects.equals(id, eartQuake.id) && Objects.equals(place, eartQuake.place);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, place, magnitud, time, latitude, longitude);
     }
 }

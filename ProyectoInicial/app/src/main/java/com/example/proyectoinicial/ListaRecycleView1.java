@@ -32,5 +32,8 @@ public class ListaRecycleView1 extends AppCompatActivity {
         eqList.add(new EartQuake("5","alemania",9.0,415252511,23,45));
         eqList.add(new EartQuake("6","españa",5.56,415252511,23,45));
 
+        EqAdapter adapter = new EqAdapter();
+        binding.eqRecycler.setAdapter(adapter);
+        adapter.submitList(eqList);
     }
 }

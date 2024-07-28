@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/magnitud_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:fontFamily="sans-serif-medium"
-        android:textColor="@color/black"
-        tools:text="5.0"/>
+    <data>
 
-    <TextView
-        android:id="@+id/place_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_toEndOf="@id/magnitud_text"
-        android:layout_toStartOf="@+id/arrow_image"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:fontFamily="sans-serif-medium"
-        android:textColor="@color/black"
-        tools:text="honolulu hawai"/>
+    </data>
 
-    <ImageView
-        android:id="@+id/arrow_image"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/ic_chevron_gray"/>
+        android:padding="16dp">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/magnitud_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/black"
+            tools:text="5.0" />
+
+        <TextView
+            android:id="@+id/place_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_toEndOf="@id/magnitud_text"
+            android:layout_toStartOf="@+id/arrow_image"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/black"
+            tools:text="honolulu hawai" />
+
+        <ImageView
+            android:id="@+id/arrow_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_chevron_gray" />
+
+    </RelativeLayout>
+</layout>
