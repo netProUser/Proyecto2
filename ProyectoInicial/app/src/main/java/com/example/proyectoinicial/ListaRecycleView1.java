@@ -45,6 +45,10 @@ public class ListaRecycleView1 extends AppCompatActivity {
             adapter.submitList(eqList2);
         });
 
+        terremotoViewModel.getEqList2().observe(this,eqList2 -> {
+            adapter.submitList(eqList2);
+        });
+
         terremotoViewModel.getEarthquakes();
     }
 }

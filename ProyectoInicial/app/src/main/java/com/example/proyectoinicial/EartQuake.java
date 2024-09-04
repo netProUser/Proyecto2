@@ -1,14 +1,21 @@
 package com.example.proyectoinicial;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Objects;
 
+@Entity(tableName = "eartquakes")
 public class EartQuake {
-    private String id;
-    private String place;
-    private double magnitud;
-    private long time;
-    private double latitude;
-    private double longitude;
+    @PrimaryKey
+    @NonNull
+    private final String id;
+    private final String place;
+    private final double magnitud;
+    private final long time;
+    private final double latitude;
+    private final double longitude;
 
     public EartQuake(String id, String place, double magnitud, long time, double latitude, double longitude) {
         this.id = id;
